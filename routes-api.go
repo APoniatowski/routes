@@ -36,7 +36,7 @@ func routesEndpoint(w http.ResponseWriter, r *http.Request) {
 			})
 
 			// marshal the struct to json
-			jsonResponse, errMarshal := json.MarshalIndent(routesResponse, "", "\t")
+			jsonResponse, errMarshal := json.MarshalIndent(routesResponse, "", "  ")
 			if errMarshal != nil {
 				http.Error(w, errMarshal.Error(), http.StatusInternalServerError)
 			}
