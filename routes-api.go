@@ -42,7 +42,6 @@ func routesEndpoint(w http.ResponseWriter, r *http.Request) {
 			}
 
 			// send data to user
-			w.WriteHeader(200)
 			w.Header().Set("Content-Type", "application/json")
 			_, errResponse := w.Write(jsonResponse)
 			if errResponse != nil {
