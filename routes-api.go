@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"sort"
 )
 
 func routesEndpoint(w http.ResponseWriter, r *http.Request) {
@@ -28,6 +29,11 @@ func routesEndpoint(w http.ResponseWriter, r *http.Request) {
 
 			// call OSRM for distance and duration information
 			routesResponse.routesAPICall()
+
+			// sort distances and durations
+			sort.SliceStable(routesResponse.Routes, func(i, j int) bool {
+				return routesResponse.Routes[i].Distance < routesResponse.Routes[j].Distance
+			})
 
 			// marshal the struct to json
 			jsonResponse, errMarshal := json.Marshal(routesResponse)

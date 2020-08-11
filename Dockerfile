@@ -15,4 +15,4 @@ ENTRYPOINT ["./routes"]
 
 
 
-## copy/pasta from kubesails examples. Will edit if this does not work
+## no longer needed.  But useful for anyone who wants to run it as a container
