@@ -1,12 +1,11 @@
 # OSRM Routes API
 ======
 
-First step is working.  Able to retrieve data and return it back to the user
+An API to get distances and driving times between your source and multiple destinations.
 
 command used:
 `curl "127.0.0.1:80/routes?src=13.388860,52.517037&dst=13.397634,52.529407&dst=13.428555,52.523219"`
 
-JSON is unfortunately not sorted yet. I will add this soon as one wil receive this:
 ```json
 {
    "routes" : [
@@ -25,4 +24,4 @@ JSON is unfortunately not sorted yet. I will add this soon as one wil receive th
 }
 ```
 
-It is working, so just need to make it look present it in a specific order (sorted by driving time and distance) and not by alphabetical order
+Response times will vary from 0.50ms (baremetal kubernetes) to 200ms (google app engine)
